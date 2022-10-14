@@ -1,0 +1,18 @@
+﻿
+@model CurrencyViewModel
+
+<form asp-controller="GET" asp-action="Currency" method="get" asp-route-charcode=@Model.SelectedCurrency>
+<div class="mb-3">
+    <lable class="form-lable">Выберите валюту</lable>
+    <lable class="form-lable">@ViewBag.SelectedValute.CharCode @ViewBag.SelectedValute.Name @ViewBag.SelectedValute.Value</lable>
+
+
+    <select class="form-select" asp-items="Model.CurrencySelectList" asp-for="SelectedCurrency">
+        <option value="NOSELECTEDVALUE">--Пожалуйста, выберите валюту--</option>
+    </select>
+
+</div>
+<div class="mb-3">
+    <button type="submit" class="btn btn-primary ">Выберите</button>
+</div>
+</form>
